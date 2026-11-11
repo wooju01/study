@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
   font-family: "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
   color: #212725;
