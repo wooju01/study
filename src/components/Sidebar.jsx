@@ -1,24 +1,24 @@
-function Sidebar({ menus, selected, onSelect }) {
+import React from "react";
+
+export default function Sidebar() {
   return (
-    <nav className="w-48 shrink-0 border-r border-gray-200 p-4">
-      <ul className="flex flex-col gap-1 text-left">
-        {menus.map((menu) => (
-          <li key={menu.id}>
-            <button
-              onClick={() => onSelect(menu.id)}
-              className={`w-full px-3 py-2 rounded text-left cursor-pointer ${
-                selected === menu.id
-                  ? 'bg-blue-500 text-white'
-                  : 'hover:bg-gray-100'
-              }`}
-            >
-              {menu.label}
-            </button>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <aside className="sidebar" aria-label="대화 사이드바">
+      <div className="brand">
+        <span className="brand__icon" aria-hidden="true">K</span>
+        <span><strong>K-Edu</strong><small>AI LEARNING LAB</small></span>
+      </div>
+      <button className="new-chat" type="button" disabled title="새 대화 기능은 이후 실습에서 구현합니다">
+        <span aria-hidden="true">＋</span> 새 대화
+      </button>
+      <nav className="history" aria-label="예시 대화 목록">
+        <h2>사이드바 디자인 미리보기</h2>
+        <ul>
+          <li className="history__active">문서 핵심 요약하기</li>
+          <li>API 요청 구조 이해</li>
+          <li>React 컴포넌트 만들기</li>
+        </ul>
+      </nav>
+      <p className="sidebar__footer"><span aria-hidden="true">●</span> 실습 04 · Hook 실험</p>
+    </aside>
   );
 }
-
-export default Sidebar;
