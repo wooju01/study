@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Routes, Route } from "react-router";
 import HomePage from "./page/HomePage.jsx";
+import ChatPage from "./page/ChatPage.jsx";
 import useChatMessages from "./hooks/useChatMessages.js";
 import MainLayout from "./layout/MainLayout.jsx";
 
@@ -37,6 +38,16 @@ export default function App() {
         <Route
           index
           element={<HomePage title={lessonTitle} messageCount={messageCount} />}
+        />
+        <Route
+          path="chat"
+          element={
+            <ChatPage
+              title={lessonTitle}
+              messages={messages}
+              onSend={addMessage}
+            />
+          }
         />
       </Route>
     </Routes>

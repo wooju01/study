@@ -7,7 +7,7 @@ export default function MessageList({ messages }) {
       <div className="thread__heading">
         <h3 id="thread-title">내 질문</h3>
         <span>전송 횟수: {messages.length}회</span>
-      </div>ㅁ
+      </div>
 
       {/* Unit 13: 배열이 비었는지에 따라 서로 다른 화면을 보여줍니다. */}
       {messages.length === 0 ? (
@@ -26,7 +26,10 @@ export default function MessageList({ messages }) {
 
       {/* Unit 13: 질문이 있을 때만 안내 문구를 출력합니다. */}
       {messages.length > 0 && (
-        <p className="thread__note">현재는 질문만 화면에 누적됩니다. AI 답변이나 서버 저장은 아직 없습니다.</p>
+        <p className="thread__note">
+          현재는 질문만 화면에 누적됩니다. AI 답변이나 서버 저장은 아직
+          없습니다.
+        </p>
       )}
     </section>
   );
