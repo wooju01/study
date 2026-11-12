@@ -7,9 +7,9 @@ import Footer from "../components/Footer.jsx";
 export default function MainLayout({ title, messageCount, latestQuestion }) {
   return (
     <div className="app-shell">
-      <Sidebar messageCout={messageCout} latestQuestion={latestQuestion} />
+      <Sidebar messageCount={messageCount} latestQuestion={latestQuestion} />
       <div className="workspace">
-        <Header title={title} messageCout={messageCout} />
+        <Header title={title} messageCount={messageCount} />
         <Outlet />
         <Footer />
       </div>
