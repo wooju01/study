@@ -3,6 +3,8 @@ import { Routes, Route } from "react-router";
 import HomePage from "./page/HomePage.jsx";
 import ChatPage from "./page/ChatPage.jsx";
 import DocumentPage from "./page/DocumentPage.jsx";
+import SettingsPage from "./page/SettingsPage.jsx";
+import NotFoundPage from "./page/NotFoundPage.jsx";
 import useChatMessages from "./hooks/useChatMessages.js";
 import MainLayout from "./layout/MainLayout.jsx";
 
@@ -52,6 +54,8 @@ export default function App() {
         />
       </Route>
       <Route path="documents" element={<DocumentPage />} />
+      <Route path="settings" element={<SettingsPage />} />
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 }
