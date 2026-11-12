@@ -1,20 +1,16 @@
 import React, { useEffect } from "react";
-import Sidebar from "./components/Sidebar.jsx";
-import Header from "./components/Header.jsx";
-import ChatInput from "./components/ChatInput.jsx";
-import Footer from "./components/Footer.jsx";
-import StatusBadge from "./components/StatusBadge.jsx";
-import MessageList from "./components/MessageList.jsx";
+import { Routes, Route } from "react-router";
+import HomePage from "./page/HomePage.jsx";
 import useChatMessages from "./hooks/useChatMessages.js";
-import StateLifecycleLab from "./components/StateLifecycleLab.jsx";
-import EffectTimerLab from "./components/EffectTimerLab.jsx";
-import DocumentPage from "./components/document/DocumentPage.jsx";
 
 const lessonTitle = "AI 문서 도우미";
 
 export default function App() {
   // Unit 18: 채팅 State 로직을 Custom Hook으로 이동했습니다.
   const { messages, addMessage } = useChatMessages();
+  const messageCount = messages.length;
+  const latesQuestion =
+    messageCount > 0 ? messages[messageCount - 1].text : null;
 
   // Unit 17: React 외부의 브라우저 문서 제목을 질문 수와 동기화합니다.
   useEffect(() => {
@@ -27,7 +23,13 @@ export default function App() {
   }, [messages.length]);
 
   return (
-    <div className="app-shell">
+    <Routes>
+      <Route
+        index
+        element={<HomePage title={lessonTitle} messageCount={messageCount} />}
+      />
+    </Routes>
+    /*<div className="app-shell">
       <Sidebar />
       <div className="workspace">
         <Header title={lessonTitle} />
@@ -63,6 +65,6 @@ export default function App() {
           <Footer />
         </div>
       </div>
-    </div>
+    </div>*/
   );
 }
