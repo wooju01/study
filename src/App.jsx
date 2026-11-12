@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Routes, Route } from "react-router";
 import HomePage from "./page/HomePage.jsx";
 import ChatPage from "./page/ChatPage.jsx";
+import DocumentPage from "./page/DocumentPage.jsx";
 import useChatMessages from "./hooks/useChatMessages.js";
 import MainLayout from "./layout/MainLayout.jsx";
 
@@ -50,6 +51,7 @@ export default function App() {
           }
         />
       </Route>
+      <Route path="documents" element={<DocumentPage />} />
     </Routes>
   );
 }
